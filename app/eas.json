@@ -1,0 +1,73 @@
+{
+  "cli": {
+    "version": ">= 5.9.3"
+  },
+  "build": {
+    "base-config": {
+      "developmentClient": true,
+      "ios": {
+        "simulator": true,
+        "env": {
+          "BABEL_ENV": "production"
+        }
+      },
+      "android": {
+        "env": {
+          "BABEL_ENV": "production"
+        }
+      },
+      "channel": "base-config"
+    },
+    "development": {
+      "extends": "base-config",
+      "developmentClient": false,
+      "distribution": "internal",
+      "channel": "development",
+      "ios": {
+        "simulator": false
+      }
+    },
+    "preview-app": {
+      "extends": "base-config",
+      "distribution": "internal",
+      "channel": "preview-app",
+      "developmentClient": true
+    },
+    "preview": {
+      "extends": "preview-app",
+      "developmentClient": false,
+      "distribution": "internal",
+      "channel": "preview"
+    },
+    "production": {
+      "developmentClient": false,
+      "distribution": "store",
+      "ios": {
+        "simulator": false,
+        "env": {
+          "BABEL_ENV": "release",
+          "NODE_ENV": "production"
+        }
+      },
+      "channel": "production"
+    },
+    "staging": {
+      "developmentClient": false,
+      "distribution": "store",
+      "ios": {
+        "simulator": false,
+        "env": {
+          "BABEL_ENV": "release",
+          "NODE_ENV": "production"
+        }
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+      }
+    },
+    "staging": {}
+  }
+}

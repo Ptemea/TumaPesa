@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const TransactionScreen = () => {
+const Transactions = () => {
     const [senderId, setSenderId] = useState('');
     const [receiverId, setReceiverId] = useState('');
     const [amount, setAmount] = useState('');
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TransactionScreen;
+export default Transactions;

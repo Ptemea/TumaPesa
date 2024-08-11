@@ -17,3 +17,7 @@ npm run start
 
 
 open -a Simulator.app
+
+
+Migrate from React Navigation:
+https://docs.expo.dev/router/migrate/from-react-navigation/
