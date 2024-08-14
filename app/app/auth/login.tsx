@@ -1,29 +1,14 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-import React, { useState } from 'react';
-import { View, TextInput, Button, Text} from 'react-native';
-import useAuth from '../../hooks/useAuth';
+const login = () => {
+  return (
+    <View>
+      <Text>login</Text>
+    </View>
+  )
+}
 
-const LoginScreen = ({ navigation }: any) => {
-    const { login, loading, error } = useAuth();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
+export default login
 
-    const handleLogin = () => {
-        login(email, password);
-    };
-
-
-    return (
-        <View >
-            <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
-            <TextInput placeholder="Password" secureTextEntry value={password} onChangeText={setPassword} />
-            <Button title="Login" onPress={handleLogin} />
-            {loading && <Text>Loading...</Text>}
-            {error && <Text>{error}</Text>}
-        </View>
-    );
-};
-
-
-export default LoginScreen;
+const styles = StyleSheet.create({})

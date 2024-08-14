@@ -2,6 +2,7 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@components/*": [
         "./components/*"
@@ -10,7 +11,7 @@
         "./constants/*"
       ],
       "@hooks/*": [
-        "./hooks/*"
+        "app/hooks/*"
       ],
       "@helpers/*": [
         "./helpers/*"
@@ -23,10 +24,16 @@
       ]
     }
   },
+
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-, "app/_layout.tsx", "app/(home)/details.tsx", "app/auth/signin"  ]
+  "**/*.ts",
+  "**/*.tsx",
+  ".expo/types/**/*.ts",
+  "expo-env.d.ts",
+  "app/_layout.tsx",
+  "app/(home)/details.tsx",
+  "app/old/signin.tsx",
+  "app/(tabs)/settings.tsx",
+  "app/(tabs)/old"
+]
 }

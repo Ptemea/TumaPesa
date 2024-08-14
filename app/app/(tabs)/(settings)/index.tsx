@@ -1,9 +1,12 @@
+
+// app/(tabs)/settings/index.tsx
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function DetailsScreen() {
+export default function SettingsScreen() {
   return (
     <View style={styles.container}>
-      <Text>Details</Text>
+      <Text style={styles.text}>Settings Screen</Text>
     </View>
   );
 }
@@ -14,4 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  text: {
+    fontSize: 24,
+  },
 });
+

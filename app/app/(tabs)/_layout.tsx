@@ -1,4 +1,23 @@
-import { Tabs } from 'expo-router';
+import { Stack } from 'expo-router';
+
+export default function TabsLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="home" />
+      <Stack.Screen name="send" />
+      <Stack.Screen name="transactions" />
+      <Stack.Screen name="settings" />
+    </Stack>
+  );
+}
+
+
+
+
+
+
+/*import { Tabs } from 'expo-router';
+import { Ionicons  } from '@expo/vector-icons';
 import React from 'react';
 import { Stack } from 'expo-router';
 import { useColorScheme } from 'react-native';
@@ -8,26 +27,9 @@ import { Feather } from '@expo/vector-icons';
 // import Colors from '@constants/Colors';
 
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabLayout = () => {
+  
   return (
-    <>
-    <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#f4511e',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}
-      >
-      <Stack.Screen name="(home)" />
-      <Stack.Screen name="settings" />
-    </Stack>
-
     <Tabs
       screenOptions={{
         // TODO: uncommnet when pallete is done
@@ -36,9 +38,9 @@ export default function TabLayout() {
       }}
       >
       <Tabs.Screen
-        name="(home)"
+        name="home"
         options={{
-          title: 'Home',
+          title: 'home',
           tabBarIcon: ({ color, focused }) => (
             <Feather name={'home'} color={color} />
           ),
@@ -46,7 +48,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="(send)"
+        name="send"
         options={{
           title: 'Send',
           tabBarIcon: ({ color, focused }) => (
@@ -56,7 +58,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="(transacitons)"
+        name="transacitons"
         options={{
           title: 'Transacitons',
           tabBarIcon: ({ color, focused }) => (
@@ -75,6 +77,7 @@ export default function TabLayout() {
         }}
       />
     </Tabs>
-    </>
-  );
-}
+  )
+};
+
+export default TabLayout;*/

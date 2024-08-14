@@ -1,5 +1,33 @@
+// app/(tabs)/transactions/index.tsx
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const Transactions=() => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Transactions Screen</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+  },
+});
+
+export default Transactions;
+
+
+
+
 // screens/TransactionScreen.tsx
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
@@ -44,4 +72,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Transactions;
+export default Transactions;*/

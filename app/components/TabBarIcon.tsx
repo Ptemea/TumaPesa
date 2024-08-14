@@ -1,6 +1,6 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { IconiconGlyphs } from '@expo/vector-icons/build/Iconicons';
+import { IconiconGlyphs } from '@expo/vector-Iconicons';
 
 type TabBarIconProps = {
   name: IconiconGlyphs;
