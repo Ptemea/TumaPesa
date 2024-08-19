@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, TextInput, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useFormik } from 'formik';
-import { VerifyEmailSchema } from '../formShemas';
+import * as Yup from 'yup';
+//import { VerifyEmailSchema } from '../../formShemas';
+import useAuth from '../../../hooks/useAuth'
 
-import useAuth from '../hooks/useAuth'
-
+const VerifyEmailSchema = Yup.object().shape({
+  token: Yup.string().required('Verification token is required'),
+});
 
 const VerifyEmail = () => {
   const { verifyEmail, loading, error } = useAuth();

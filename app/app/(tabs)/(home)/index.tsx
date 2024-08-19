@@ -9,7 +9,7 @@ const Home = () => {
       <Link href="/(home)"> Home</Link>
       <Link href="../auth/login">Login</Link> 
       <Link href="/send">Send</Link>
-      <Link href="../auth/signup">Signup</Link>
+      <Link href={'/auth/signup'}>Signup</Link>
       <Link href="/transactions">Transactions</Link>
       <Link href="/settings">Settings</Link>
     </View>

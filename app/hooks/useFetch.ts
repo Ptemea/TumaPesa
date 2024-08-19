@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -13,7 +12,16 @@ const useFetch = (url: string) => {
                 const response = await axios.get(url);
                 setData(response.data);
             } catch (err) {
-                setError(err.message);
+                if (axios.isAxiosError(err)) {
+                    // Handle Axios error
+                    setError(err.response?.data?.message || err.message);
+                } else if (err instanceof Error) {
+                    // Handle JavaScript Error
+                    setError(err.message);
+                } else {
+                    // Handle(unknown errors)
+                    setError('An unknown error occurred');
+                }
             } finally {
                 setLoading(false);
             }

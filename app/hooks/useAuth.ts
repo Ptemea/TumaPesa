@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as SecureStore from 'expo-secure-store';
-//import { reportError } from '../services/crashReporting';
+//import { reportError } from '@services/crashReporting';
+import { ErrorMessage } from 'formik';
 
 
 const API_ENDPOINTS = {
@@ -24,7 +25,8 @@ const useAuth = () => {
       setUser(response.data);
       await SecureStore.setItemAsync('user', JSON.stringify(response.data));
     } catch (err: any) {
-      setError(err.response?.data?.message || err.message);
+      const errorMessage =err.response?.data?.message || err.message;
+      setError(errorMessage);
       reportError(err);
     } finally {
       setLoading(false);

@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import { useFormik } from 'formik';
-import { SignUpSchema } from '../formShemas';
-import useAuth from '../hooks/useAuth';
+import { SignupSchema } from '../../formShemas';
+import useAuth from '../../../hooks/useAuth';
 
-
-const SignUp = () => {
+const Signup = () => {
   const { signup, loading, error } = useAuth();
   const formik = useFormik({
     initialValues: { email: '', password: '' },
-    validationSchema: SignUpSchema,
+    validationSchema: SignupSchema,
     onSubmit: (values) => signup(values.email, values.password),
   });
 
@@ -36,4 +35,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;

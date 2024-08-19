@@ -1,17 +1,21 @@
-
+//auth/ForgotPassword.tsx
 import React from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { useFormik } from 'formik';
-import { SignInSchema } from '../formShemas';
-import useAuth from '../hooks/useAuth';
+import * as Yup from 'yup';
+import useAuth from '../../../hooks/useAuth';
 
-const SignIn = () => {
-  const { login, loading, error } = useAuth();
+const ForgotPasswordSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Email is required'),
+});
+
+const ForgotPassword = () => {
+  const { forgotPassword, loading, error } = useAuth();
   const formik = useFormik({
-    initialValues: { email: '', password: '' },
-    validationSchema: SignInSchema,
+    initialValues: { email: '' },
+    validationSchema: ForgotPasswordSchema,
     onSubmit: (values) => {
-      login(values.email, values.password);
+      forgotPassword(values.email);
     },
   });
 
@@ -33,19 +37,8 @@ const SignIn = () => {
       {formik.touched.email && formik.errors.email && (
         <Text style={styles.errorText}>{formik.errors.email}</Text>
       )}
-      <TextInput
-        placeholder="Password"
-        secureTextEntry
-        onChangeText={formik.handleChange('password')}
-        onBlur={formik.handleBlur('password')}
-        value={formik.values.password}
-        style={styles.input}
-      />
-      {formik.touched.password && formik.errors.password && (
-        <Text style={styles.errorText}>{formik.errors.password}</Text>
-      )}
       {error && <Text style={styles.errorText}>{error}</Text>}
-      <Button onPress={handlePress} title="Sign In" disabled={loading} />
+      <Button onPress={handlePress} title="Reset Password" disabled={loading} />
     </View>
   );
 };
@@ -69,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+export default ForgotPassword;

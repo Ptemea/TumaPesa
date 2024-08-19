@@ -63,15 +63,17 @@ const TabLayout = () => {
 };
 
 export default TabLayout;*/
+import React from 'react';
 import { Stack } from 'expo-router';
 
-export default function Layout() {
+const Layout = () => {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ title: 'Home' }} />
-      <Stack.Screen name="auth/login" options={{ title: 'Login' }} />
-      <Stack.Screen name="auth/signup" options={{ title: 'Signup' }} />
-      {/* Add other screens here */}
+      <Stack.Screen name="index" />
+      <Stack.Screen name="auth" />
+      {/* other screens */}
     </Stack>
   );
-}
+};
+
+export default Layout;
