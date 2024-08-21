@@ -2,11 +2,12 @@ import React from 'react';
 import {View, Text, StyleSheet } from 'react-native';
 
 const Send = () => {
+  return (
     <View style={styles.container}>
-    <Text style={styles.container}> Send </Text>
+    <Text> Send </Text>
     </View>
-
-}
+  );
+};
 const styles = StyleSheet.create({
     container: {
       flex: 1,

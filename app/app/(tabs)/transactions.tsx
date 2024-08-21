@@ -2,13 +2,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Transactions=() => {
+const Transactions =() => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Transactions Screen</Text>
+      <Text> Transactions Screen</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

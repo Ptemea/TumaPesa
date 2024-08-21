@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import useProfile from '../../../../hooks/userProfile';
+import { updatePasswordRouteProp } from '../../../../app/src/types';
 
-const ChangePassword = ({ route }) => {
+interface changePasswordRouteProp {
+  route: updatePasswordRouteProp;
+}
+
+const changePassword: React.FC<changePasswordRouteProp > = ({ route }) => {
   const { userId } = route.params;
   const { updatePassword, loading, error } = useProfile();
   const [password, setPassword] = useState('');
@@ -45,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChangePassword;
+export default changePassword;

@@ -31,7 +31,7 @@
   ".expo/types/**/*.ts",
   "expo-env.d.ts",
   "app/_layout.tsx",
-  "app/(home)/details.tsx",
+  "app/(tabs)/(home)/details.tsx",
   "app/old/signin.tsx",
   "app/(tabs)/settings.tsx",
   "app/(tabs)/old"

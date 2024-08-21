@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-//import useProfile from '../../../hooks/useProfile';
 import useProfile from '../../../../hooks/userProfile';
+import { RouteProp } from '@react-navigation/native';
 
-const EditAccount = ({ route }) => {
+type EditAccountRouteProp = RouteProp<{ params: { userId: string } }, 'params'>;
+
+interface AccountData {
+  name: string;
+  phone: string;
+}
+
+const EditAccount = ({ route }: { route: EditAccountRouteProp }) => {
   const { userId } = route.params;
   const { editAccount, loading, error } = useProfile();
-  const [accountData, setAccountData] = useState({});
+  const [accountData, setAccountData] = useState<AccountData>({
+    name: '',
+    phone: '',
+  });
 
   const handleSubmit = () => {
     editAccount(userId, accountData);

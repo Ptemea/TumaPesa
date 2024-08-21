@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-//import useProfile from '../useProfile';  // Corrected import
 import useProfile from '../../../../hooks/userProfile';
-//import { ChangeEmailRouteProp } from '../../../types';  // Corrected import
-import { ChangeEmailRouteProp } from '../../../src/types';
+import { ChangeEmailRouteProp } from '../../../../src/types';
 
 interface ChangeEmailProps {
   route: ChangeEmailRouteProp;

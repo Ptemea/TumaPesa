@@ -1,14 +1,14 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { IconiconGlyphs } from '@expo/vector-Iconicons';
+//@expo/vector-Iconicons';
 
 type TabBarIconProps = {
-  name: IconiconGlyphs;
+  name: keyof typeof Ionicons.glyphMap;
   color: string;
   size: number;
 }
 
-const TabBarIcon = ({ name, color, size }: TabBarIconProps) => {
+const TabBarIcon: React.FC<TabBarIconProps> = ({ name, color, size }) => {
     return <Ionicons name={name} color={color} size={size} />;
   };
   

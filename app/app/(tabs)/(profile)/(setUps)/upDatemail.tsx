@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-//import useProfile from './useProfile'; 
 import useProfile from '../../../../hooks/userProfile';
-import { updateUsernameRouteProp } from '../../../../app/src/types'; 
+import { upDatemailRouteProp } from '../../../src/types';
 
-interface ChangeUsernameRouteProp {
-  route: updateUsernameRouteProp;
+interface upDatemailProps {
+  route: upDatemailRouteProp;
 }
 
-const changeUsername: React.FC<ChangeUsernameRouteProp> = ({ route }) => {
+const upDatemail: React.FC<upDatemailProps> = ({ route }) => {
   const { userId } = route.params;
-  const { updateUsername, loading, error } = useProfile();
-  const [username, setUsername] = useState('');
+  const { upDatemail, loading, error } = useProfile();
+  const [email, setEmail] = useState('');
 
   const handleSubmit = () => {
-    updateUsername(userId, username);
+    upDatemail(userId, email);
   };
 
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder="New Username"
-        value={username}
-        onChangeText={setUsername}
+        placeholder="New Email"
+        value={email}
+        onChangeText={setEmail}
         style={styles.input}
+        keyboardType="email-address"
+        autoCapitalize='none'
       />
       {error && <Text style={styles.errorText}>{error}</Text>}
-      <Button title="Update Username" onPress={handleSubmit} disabled={loading} />
+      <Button title="UpDatemail" onPress={handleSubmit} disabled={loading} />
     </View>
   );
 };
@@ -50,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default changeUsername;
+export default upDatemail;

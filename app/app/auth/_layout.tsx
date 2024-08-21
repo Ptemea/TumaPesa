@@ -1,15 +1,24 @@
-//auth/AuthLayout.tsx
 import React from 'react';
-import { Stack } from 'expo-router';
+import { createStackNavigator } from '@react-navigation/stack';
+import SignIn from './signin';
+import Signup from './signup';
+import forgotPassword from './forgot-Password';
+import VerifyEmail from './verify-email';
 
-const AuthLayout = () => {
+const Stack = createStackNavigator();
+
+const AuthStack = () => {
   return (
-    <Stack>
-      <Stack.Screen name="signup" />
-      <Stack.Screen name="signin" />
-    </Stack>
+    <Stack.Navigator initialRouteName="SignIn">
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="forgot-Password" component={forgotPassword} />
+      <Stack.Screen name="verifyEmail" component={VerifyEmail} />
+      
+    </Stack.Navigator>
   );
 };
 
-export default AuthLayout;
+export default AuthStack;
+
 

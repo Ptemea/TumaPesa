@@ -2,8 +2,7 @@
 import React from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { useFormik } from 'formik';
-//import { SignInSchema } from '../../formSchemas';
-import { SignInSchema } from '../../formShemas';
+import { SignInSchema } from '@components/formShemas';
 import useAuth from '../../../hooks/useAuth';  
 
 const SignIn = () => {

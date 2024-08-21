@@ -1,13 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, {useEffect} from 'react';
+import { Text , View} from 'react-native';
+import { useLayoutEffect } from 'react';
+import { router } from 'expo-router';
 
-const Page = () => {
+const AppTabs = () => {
+  // auth logic live here
+  // if a valid auth token exists => forward to (tabs)
+  // if token is expired, malformed, etc. => forward to sign in page
+
+  // run when the app is done rendering/ loading
+  useLayoutEffect(() => {
+    router.replace('/(tabs)')
+  })
+
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  )
-}
+    <>
+    </>
+  );
+};
 
-export default Page
-
+export default AppTabs;

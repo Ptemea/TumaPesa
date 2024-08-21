@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import { useFormik } from 'formik';
-import { SignupSchema } from '../../formShemas';
+import { SignupSchema } from '@components/formShemas';
 import useAuth from '../../../hooks/useAuth';
 
 const Signup = () => {
