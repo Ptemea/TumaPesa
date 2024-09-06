@@ -1,22 +1,29 @@
-import React, {useEffect} from 'react';
-import { Text , View} from 'react-native';
-import { useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 
 const AppTabs = () => {
-  // auth logic live here
-  // if a valid auth token exists => forward to (tabs)
-  // if token is expired, malformed, etc. => forward to sign in page
+  const [isLayoutMounted, setIsLayoutMounted] = useState(false);
 
-  // run when the app is done rendering/ loading
-  useLayoutEffect(() => {
-    router.replace('/(tabs)')
-  })
+  // Simulate a delay to ensure that the layout is mounted
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      try {
+        setIsLayoutMounted(true);
+        router.replace('/(tabs)'); // Navigate to the tabs
+      } catch (error) {
+        console.error('Navigation error:', error);
+      }
+    }, 100); // Small delay to ensure layout is ready
 
-  return (
-    <>
-    </>
-  );
+    return () => clearTimeout(timeout); // Clean up the timeout
+  }, []);
+
+  // Return null until the layout is ready and navigation is triggered
+  if (!isLayoutMounted) {
+    return null;
+  }
+
+  return null;
 };
 
 export default AppTabs;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import useProfile from '../../../../hooks/userProfile';
-import { upDatemailRouteProp } from '../../../src/types';
+import { upDatemailRouteProp } from '../../../../src/types';
 
 interface upDatemailProps {
   route: upDatemailRouteProp;

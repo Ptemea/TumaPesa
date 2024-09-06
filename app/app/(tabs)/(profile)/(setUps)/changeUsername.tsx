@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-//import useProfile from './useProfile'; 
-import useProfile from '../../../../hooks/userProfile';
-import { updateUsernameRouteProp } from '../../../../app/src/types'; 
+import useProfile from '../../../../hooks/userProfile'; 
+import { updateUsernameRouteProp } from '../../../../src/types';
 
 interface ChangeUsernameRouteProp {
   route: updateUsernameRouteProp;

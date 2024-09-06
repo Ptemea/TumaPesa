@@ -1,32 +1,36 @@
-// app/components/ThemedText.tsx
 import React from 'react';
 import { Text, TextStyle, StyleSheet } from 'react-native';
 
-interface ThemedTextProps {
-    children: React.ReactNode;
-    style?: TextStyle;
-    type?: 'default' | 'bold' | 'italic' | 'title' | 'defaultSemiBold' | 'link'
-}
-
-const ThemedText: React.FC<ThemedTextProps> = ({ children, style, type = 'default' }) => {
-    const textStyle = [styles.text, styles[type], style];
-
-    return <Text style={textStyle}>{children}</Text>;
-};
-
-const styles = StyleSheet.create({
+interface Styles {
+    text: TextStyle;
+    bold: TextStyle;
+    italic: TextStyle;
+    title: TextStyle;
+    defaultSemiBold: TextStyle;
+    link: TextStyle;
+  }
+  
+  const styles: Styles = StyleSheet.create({
     text: {
-        fontSize: 16,
+      fontSize: 16,
+      color: 'black',
     },
     bold: {
-        fontWeight: 'bold',
+      fontWeight: 'bold',
     },
     italic: {
-        fontStyle: 'italic',
+      fontStyle: 'italic',
     },
-    title: {},
-    defaultSemiBold: {}
-
-});
-
-export default ThemedText;
+    title: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+    defaultSemiBold: {
+      fontWeight: '600',
+    },
+    link: {
+      color: 'blue',
+      textDecorationLine: 'underline',
+    },
+  });
+  

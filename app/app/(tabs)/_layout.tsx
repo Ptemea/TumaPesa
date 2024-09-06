@@ -2,6 +2,7 @@
 
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Layout = () => {
 
@@ -21,7 +22,7 @@ const Layout = () => {
        screenOptions={{
           tabBarActiveTintColor: 'blue',
           tabBarStyle: tabStyles,
-          // tabBarShowLabel: false,
+         tabBarInactiveTintColor: 'gray',
         }}
     >
       <Tabs.Screen name="index"  options={{
@@ -34,16 +35,40 @@ const Layout = () => {
           ) : (
             <Ionicons name="home-outline" size={24} color={color} />
           ),
-        href: './index'
       }}/>
       <Tabs.Screen name="send" options={{
-        href: '/send'
+        ...layoutBaseProps,
+        headerTitle: 'send',
+        headerShown: true,
+        tabBarIcon: ({ color, focused}) =>
+          <Ionicons name='send' size={22} color={color}/>
+        
       }}/>
+       <Tabs.Screen name="recipient" options={{
+        ...layoutBaseProps,
+        headerTitle: 'recipient',
+        headerShown: true,
+        tabBarIcon: ({ color, focused}) =>
+          <Ionicons name='people' size={22} color={color}/>
+      }}/>
+
+      {/* add icon */}
       <Tabs.Screen name="transactions" options={{
-        href: '/transactions'
+        ...layoutBaseProps,
+        headerTitle: 'transcations',
+        headerShown: true,
+        tabBarIcon: ({ color, focused}) =>
+          <MaterialCommunityIcons name='bank-transfer' size={22} color={color}/>
+     
       }}/>
+
+      {/* add icon */}
       <Tabs.Screen name="(profile)" options={{
-        href: '/(profile)'
+      ...layoutBaseProps,
+      headerTitle: 'profile',
+      headerShown: true,
+      tabBarIcon: ({ color, focused}) =>
+        <Ionicons name='person' size={22} color={color}/>
       }}/>
     </Tabs>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import useProfile from '../../../../hooks/userProfile';
-import { updatePasswordRouteProp } from '../../../../app/src/types';
+//import { updatePasswordRouteProp } from '../../../../app/src/types';
+import { updatePasswordRouteProp } from '../../../../src/types';
 
 interface changePasswordRouteProp {
   route: updatePasswordRouteProp;
